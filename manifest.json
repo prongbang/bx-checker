@@ -1,0 +1,49 @@
+{
+    "name": "BX Checker",
+    "version": "1.0",
+    "manifest_version": 2,
+    "author": "prongbang",
+    "description": "BX Checker",
+    "browser_action": {
+      "default_icon": "src/icon/bx-128x128.png",
+      "default_popup": "src/popup.html"
+    },
+    "icons": {
+      "128": "src/icon/bx-128x128.png",
+      "16": "src/icon/bx-16x16.png",
+      "48": "src/icon/bx-48x48.png"
+    },
+    "permissions": [
+      "tabs",
+      "alarms",
+      "activeTab",
+      "webRequest",
+      "notifications",
+      "storage",
+      "downloads",
+      "*://*.bx.in.th/",
+      "*://*.bx.in.th/",
+      "cookies",
+      "webRequestBlocking",
+      "<all_urls>"
+    ],
+    "content_security_policy": "script-src 'self' https://ssl.google-analytics.com; object-src 'self'",
+    "content_scripts": [
+      {
+        "matches": [
+          "<all_urls>"
+        ],
+        "js": [
+          "src/js/content.js"
+        ],
+        "run_at": "document_end"
+      }
+    ],
+    "background": {
+      "scripts": [
+        "src/js/background.js"
+      ],
+      "persistent": true
+    },
+    "web_accessible_resources": [ "*" ]
+  }
