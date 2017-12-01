@@ -1,4 +1,4 @@
-# BX Checker Chrome Extensions
+# BX Checker Notification Chrome Extensions
 ## How to install
 > 1. Go to [chrome://extensions/](chrome://extensions/)
 
