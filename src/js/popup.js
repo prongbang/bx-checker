@@ -9,6 +9,8 @@ document.addEventListener('DOMContentLoaded', function() {
     if(checked != undefined) {
         switchTag.checked = +checked == 1 ? true : false;
         console.log("checked:", checked)
+    } else {
+        localStorage.setItem(key, 1);
     }
 
     switchTag.addEventListener('click', function(e) {
